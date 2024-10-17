@@ -13,7 +13,7 @@ int main()
     sum = a + b;
     product = a * b;
     difference = a - b;
-    quotient = a ^ b;
+    quotient = a / b;
     cout << "The sum of the two numbers is" << sum << endl;
     cout << "The product of the two numbers is" << product << endl;
     cout << "The difference of the numbers is" << difference << endl;
