@@ -3,16 +3,18 @@
 using namespace std;
 void displayAccount(Account accountToDisplay)
 {
-    accountToDisplay.getName();
-    accountToDisplay.getBalance();
+    cout << "the owner of the acct is" << accountToDisplay.getName();
+    cout << accountToDisplay.getName() << "balance is " << accountToDisplay.getBalance() << endl;
 }
 int main()
 {
     Account myAccount{"Favour", 62};
     Account account2{"Precious", -7};
-    cout << "the owner of the first acct is" << displayAccount();
-    cout << "The owner of the sec acct is" << displayAccount(account2);
-    cout << myAccount.getName() << "balance is " << myAccount.getBalance() << endl;
+    displayAccount(myAccount);
+    displayAccount(account2);
+    displayAccount(myAccount);
+    displayAccount(account2);
+
     cout << account2.getName() << "balance is " << account2.getBalance() << endl;
 
     cout << "\n\nEnter deposit amount for account1: "; // prompt
