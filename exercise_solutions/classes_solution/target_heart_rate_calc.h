@@ -11,6 +11,7 @@ HeartRates. The class
  person’s maximum heart rate and a member function that
  calculates and returns the person’s target heart rate.
 */
+
 #include <iostream>
 #include <string>
 class HeartRates

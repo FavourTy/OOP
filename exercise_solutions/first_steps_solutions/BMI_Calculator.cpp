@@ -11,5 +11,21 @@
 using namespace std;
 int main()
 {
+    double weight{0};
+    double height{0};
+    double bmi{0};
+    const int poundsV = 703;
+
+    cout << "Input your weight in Pounds : ";
+    cin >> weight;
+    cout << "Input your Height in Inches: ";
+    cin >> height;
+    bmi = (weight * poundsV) / (height * height);
+    cout << "Your Body Mass Index Value is " << bmi << endl;
+    cout << "BMI Values: Evaluate your BMI" << endl;
+    cout << "Underweight : less than 18.5" << endl;
+    cout << "Normal : between 18.5 and 24.9" << endl;
+    cout << "Overweight : between 25 and 29.9 " << endl;
+    cout << "Obese : 30 0r greater" << endl;
     return 0;
 }
