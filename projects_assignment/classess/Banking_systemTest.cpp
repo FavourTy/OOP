@@ -1,32 +1,58 @@
+/*Build a simple banking system using OOP principles. Design a simple command line menu
+for user interaction.
+*/
 #include <iostream>
 #include "Banking_system.h"
 using namespace std;
-int main()
+
+// function to display user's initial acct balance
+void ToDisplayinitialBalance(BankAccount todisplay)
 {
-    BankAccount myAccount1{23456, 12.35};
-    BankAccount myAccount2{1356, 34.56};
-    cout << "My Balance in Account 1 is " << myAccount1.displayBalance() << "\n"
-         << "My Balance in Account 2 is " << myAccount2.displayBalance() << endl;
+    cout << todisplay.getUserName() << " Initial balance is " << todisplay.displayBalance() << "\n";
+}
+
+// function to  deposit money into a user's acct
+void DepositMoney(BankAccount &depositmoney)
+{
     cout << "Enter Deposit amt: " << "\n";
     double depositamt;
     cin >> depositamt;
-    cout << "adding " << depositamt << " to " << myAccount1.displayBalance() << endl;
-    myAccount1.deposit(depositamt);
-    cout << "Balance is " << myAccount1.displayBalance() << endl;
+    cout << "adding " << depositamt << " to " << depositmoney.displayBalance() << endl;
+    depositmoney.deposit(depositamt);
+    cout << "Balance is " << depositmoney.displayBalance() << endl;
+}
+
+// function to  withdraw money from a user's acct
+void withdrawMoney(BankAccount &withdrawmoney)
+{
     double withdrawAmt;
     cout << "How much do you want to withdraw ?" << "\n";
     cin >> withdrawAmt;
-    myAccount1.withdraw(withdrawAmt);
-    cout << "balance is " << myAccount1.displayBalance() << endl;
-    while (withdrawAmt > myAccount1.displayBalance())
+    while (withdrawAmt > withdrawmoney.displayBalance())
     {
-        cout << "You can only withdraw " << myAccount1.displayBalance() << " or less \n How much do you want to withdraw ?" << endl;
+        cout << "You can only withdraw " << withdrawmoney.displayBalance() << " or less \n How much do you want to withdraw ?" << endl;
         cin >> withdrawAmt;
-        if (withdrawAmt <= myAccount1.displayBalance())
+        if (withdrawAmt <= withdrawmoney.displayBalance())
         {
             break;
         }
     }
-    myAccount1.withdraw(withdrawAmt);
-    cout << "  Balance is " << myAccount1.displayBalance();
+    cout << "withdrawing " << withdrawAmt << " from " << withdrawmoney.displayBalance() << endl;
+    withdrawmoney.withdraw(withdrawAmt);
+    cout << "Balance is " << withdrawmoney.displayBalance() << "\n\n";
+}
+
+int main()
+{
+    BankAccount myAccount1{"Favour", 23456, 12.35};
+    BankAccount myAccount2{"Aliyah", 1356, 34.56};
+    ToDisplayinitialBalance(myAccount1);
+    DepositMoney(myAccount1);
+    withdrawMoney(myAccount1);
+
+    ToDisplayinitialBalance(myAccount2);
+    DepositMoney(myAccount2);
+    withdrawMoney(myAccount2);
+
+    return 0;
 }
