@@ -1,3 +1,6 @@
+/*Create a complex number calculator by
+overloading operators.*/
+
 #include <iostream>
 #include <iomanip>
 #include "operator_overloading.h"

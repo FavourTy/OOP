@@ -5,20 +5,21 @@
 #include <sstream>   //for ostringstream class
 #include <string>
 #include "time.h" //include definition of class time from time.h
-
 using namespace std;
+// void Time::setTime(int h, int m, int s);
+// string Time::toUniversalString() const;
+// string Time::toStandardString() const;
 
 // set newTime value using universal time
 
 void Time::setTime(int h, int m, int s)
 {
-    if (h >= 0 && h < 24)
-        &&(m >= 0 && m < 60) && (s >= 0 && s < 60)
-        {
-            hour = h;
-            minute = m;
-            second = s;
-        }
+    if ((h >= 0 && h < 24) && (m >= 0 && m < 60) && (s >= 0 && s < 60))
+    {
+        hour = h;
+        minute = m;
+        second = s;
+    }
     else
     {
         throw invalid_argument(
@@ -39,6 +40,6 @@ string Time::toStandardString() const
     ostringstream output;
     output << ((hour == 0 || hour == 12) ? 12 : hour % 12) << ":"
            << setfill('0') << setw(2) << minute << ":" << setw(2)
-           << second << (hour < 12 ? "AM" : "Pm");
+           << second << (hour < 12 ? " AM " : "PM");
     return output.str();
 }

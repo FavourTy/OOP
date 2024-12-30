@@ -7,9 +7,15 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${file}",
+                "static_class_test.cpp",
+                "static_class.cpp",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${fileDirname}\\static_class_test.exe"
+                // "-fdiagnostics-color=always",
+                // "-g",
+                // "${file}",
+                // "-o",
+                // "${fileDirname}\\${fileBasenameNoExtension}.exe",
             ],
             "options": {
                 "cwd": "${fileDirname}"

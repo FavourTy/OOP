@@ -1,11 +1,11 @@
 // time.h
 //  Time class definition
 //  Member functions are defined in time.cpp
+// prevent multiple inclusions of header
+#ifndef TIME_H
+#define TIME_H
 
 #include <string>
-// prevent multiple inclusions of header
-#ifdef TIME_H
-#define TIME_H
 
 class Time
 {
@@ -17,8 +17,7 @@ public:
 private:
     unsigned int hour{0};   // 0-23{24-hour clock format}
     unsigned int minute{0}; // 0-59
-    unsigned int second{0};
-    0 - 59
+    unsigned int second{0}; // 0 - 59
 };
 
 #endif

@@ -1,9 +1,10 @@
-/*Assignment 2 soln*/
+/*Develop a dynamic array manipulation system using pointers, allowing for addition,
+removal, and viewing of elements.*/
 
 #include <iostream>
 using namespace std;
-// function prototype
 
+// function prototype
 int *createDynamicArray(int);
 void addElement(int *&myArray, int &size, int value);
 void removeElement(int *&myArray, int &size, int index);
